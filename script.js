@@ -56,7 +56,7 @@ function createGrid(){
         block.classList.add("block")
         block.addEventListener(("mousedown"), claimBlock)
         block.addEventListener(("click"), changeUI)
-        block.addEventListener(("mouseup"), alertWinner)  
+        block.addEventListener(("mouseup"), alertWinner) 
         let container = document.getElementById("container")
         container.appendChild(block)
     }
@@ -67,13 +67,10 @@ function claimBlock(e){
     if(gameobj[i] == ""){
         o = getPlayer()
         gameobj[i] = o
-        console.log(gameobj)
+        console.log(game[2])
     }
     if(!winner){
         getWinner()
-    }
-    else{
-        alert(winningplayer)
     }
 }
 function changeUI(e){
@@ -86,7 +83,6 @@ function alertWinner(){
         fingamediv.style.display = "inline"
         let showwin = document.getElementById("showwin")
         showwin.innerHTML = winningplayer
-        
     }
     
 }
@@ -100,7 +96,13 @@ function getPlayer(){
         return "o"   
     }
 }
+
 function getWinner(){
+    if(gameobj[0] !== "" && gameobj[1] !== "" && gameobj[2] !== "" && gameobj[3] !== "" && gameobj[4] !== "" && gameobj[5] !== "" && gameobj[6] !== "" && gameobj[7] !== "" && gameobj[8] !== ""){
+        winningplayer = "it's a tie"
+        winner = true
+    }
+
     //x as winner
     if(gameobj[1] === "x" && gameobj[0] === "x" && gameobj[2] === "x"){
         winningplayer = game[0]
@@ -127,6 +129,10 @@ function getWinner(){
         winner = true
     }
     if(gameobj[0] === "x" && gameobj[4] === "x" && gameobj[8] === "x"){
+        winningplayer = game[0]
+        winner = true
+    }
+    if(gameobj[2] === "x" && gameobj[4] === "x" && gameobj[6] === "x"){
         winningplayer = game[0]
         winner = true
     }
@@ -157,6 +163,10 @@ function getWinner(){
         winner = true
     }
     if(gameobj[0] === "o" && gameobj[4] === "o" && gameobj[8] === "o"){
+        winningplayer = game[1]
+        winner = true
+    }
+    if(gameobj[2] === "o" && gameobj[4] === "o" && gameobj[6] === "o"){
         winningplayer = game[1]
         winner = true
     }

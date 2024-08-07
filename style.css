@@ -9,11 +9,13 @@ body{
     display: grid;
     grid-template-rows: 100px 100px 100px;
     grid-template-columns: 100px 100px 100px;
-    gap: 5vw;
+    gap: 0.3vw;
+    background-color: black;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: transparent;
 }
 .block{
     width: 100px;
@@ -21,17 +23,42 @@ body{
     background-color: rgb(243, 247, 247);
     font-size: 100px;
     text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
 }
 #gamefinish{
     display: none;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 .form{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+input{
+    height: 7vh;
+    width: 10vw;
+    font-size: large;
+    border-radius: 10px;
+    border: solid rgb(206, 208, 208);
+    background-color: rgb(231, 235, 235);
+}
+button{
+    height: 8vh;
+    width: 10vw;
+    font-size: large;
+    border-radius: 10px;
+    border: solid rgb(206, 208, 208);
+    background-color: rgb(231, 235, 235);
+}
+input:focus{
+    outline: none;
+}
+#player1, #player2{
+    font-size: xx-large;
+    margin-top: 20px;
+    margin-left: 30px;
 }
